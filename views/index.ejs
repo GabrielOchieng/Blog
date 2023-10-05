@@ -1,0 +1,35 @@
+<div class="author">
+	<h1 class="author_heading">Hi, I am THEGABRIELSHOW.</h1>
+	<p class="author_body">Web Developer and Technical Writer</p>
+</div>
+
+<img
+	src="https://images.pexels.com/photos/7760781/pexels-photo-7760781.jpeg?auto=compress&cs=tinysrgb&w=600"
+	alt="person"
+	class="hero-image"
+	width="981"
+	height="528"
+/>
+
+<section class="articles">
+	<h2 class="articles_heading">Latest Posts</h2>
+
+	<ul class="article-ul">
+		<% data.forEach(post => { %>
+
+		<li>
+			<a href="/post/<%- post._id %>">
+				<span><%- post.title %></span>
+				<span class="article-list_date"
+					><%- post.createdAt.toDateString() %></span
+				>
+			</a>
+		</li>
+		<% }) %>
+	</ul>
+
+	<% if (nextPage !== null) { %>
+	<a href="/?page=<%- nextPage %>" class="pagination">&lt; View Older Posts</a>
+
+	<% } %>
+</section>
